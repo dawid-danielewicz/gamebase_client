@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import GamesView from "@/views/GamesView";
+import CreateGame from "@/views/CreateGame";
 
 const routes = [
   {
@@ -14,6 +16,16 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  },
+  {
+    path: '/games',
+    name: 'games',
+    component: GamesView
+  },
+  {
+    path: '/games/create',
+    name: 'games.create',
+    component: CreateGame
   }
 ]
 
